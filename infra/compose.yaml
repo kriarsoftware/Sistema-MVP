@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17.6
+    environment:
+      POSTGRES_USER: varejo_owner
+      POSTGRES_PASSWORD: local_owner_change_me
+      POSTGRES_DB: varejo360
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/01-runtime.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U varejo_owner -d varejo360"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  postgres_data:

@@ -1,0 +1,18 @@
+{
+  "name": "varejo360",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.20.0",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "pnpm --filter @varejo360/database build && pnpm --parallel --filter @varejo360/api --filter @varejo360/web dev",
+    "build": "pnpm --filter @varejo360/database build && pnpm --filter @varejo360/api build && pnpm --filter @varejo360/web build",
+    "typecheck": "pnpm -r typecheck",
+    "db:generate": "pnpm --filter @varejo360/database generate",
+    "db:migrate": "pnpm --filter @varejo360/database migrate",
+    "db:seed": "pnpm --filter @varejo360/database seed",
+    "test": "pnpm --filter @varejo360/api test",
+    "test:integration": "pnpm --filter @varejo360/database test",
+    "test:e2e": "pnpm --filter @varejo360/web test:e2e"
+  }
+}

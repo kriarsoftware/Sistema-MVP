@@ -1,0 +1,28 @@
+{
+  "name": "@varejo360/database",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "generate": "dotenv -e ../../.env -- prisma generate",
+    "validate": "dotenv -e ../../.env -- prisma validate",
+    "migrate": "dotenv -e ../../.env -- prisma migrate deploy",
+    "seed": "dotenv -e ../../.env -- tsx prisma/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "dotenv -e ../../.env -- tsx --test test/isolation.test.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.0",
+    "better-auth": "1.7.12"
+  },
+  "devDependencies": {
+    "prisma": "6.19.0",
+    "dotenv-cli": "8.0.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "@types/node": "22.18.10"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@varejo360/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "dotenv -e ../../.env -- tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "dotenv -e ../../.env -- node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/security.test.ts"
+  },
+  "dependencies": {
+    "@varejo360/database": "workspace:*",
+    "@nestjs/common": "11.1.8",
+    "@nestjs/core": "11.1.8",
+    "@nestjs/platform-express": "11.1.8",
+    "@nestjs/swagger": "11.2.1",
+    "better-auth": "1.7.12",
+    "express": "5.1.0",
+    "express-rate-limit": "8.1.0",
+    "helmet": "8.1.0",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "dotenv-cli": "8.0.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "@types/node": "22.18.10",
+    "@types/express": "5.0.3"
+  }
+}
